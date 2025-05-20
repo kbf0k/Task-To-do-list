@@ -43,13 +43,16 @@ if (!$tarefa) {
     <meta charset="UTF-8">
     <title>Editar Tarefa</title>
     <link rel="stylesheet" href="../style/editar_tarefas.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
     <nav>
         <img src="../img/logo.png" id="logo" alt="">
         <ul>
-            <li><a href="inicio.php">Gerenciador de tarefas</a></li>
+            <li><a href="inicio.php">Gerenciador de Tarefas</a></li>
+            <li><a href="adicionar_tarefas.php">Adicionar Tarefas</a></li>
+            <li><a href="#" id="logout">Sair</a></li>
         </ul>
     </nav>
 
@@ -64,8 +67,12 @@ if (!$tarefa) {
                 </div>
 
                 <div class="inputbox">
-                    <input type="text" name="prioridade_tarefa" value="<?= htmlspecialchars($tarefa['prioridade_tarefa']) ?>" required>
-                    <span>Prioridade:</span>
+                    <span id="status">Prioridade da Tarefa</span>
+                    <select name="prioridade_tarefa" required>
+                        <option value="Baixa">Baixa</option>
+                        <option value="Média">Média</option>
+                        <option value="Alta">Alta</option>
+                    </select>
                 </div>
 
                 <div class="inputbox">
@@ -79,8 +86,12 @@ if (!$tarefa) {
                 </div>
 
                 <div class="inputbox">
-                    <input type="text" name="status_tarefa" value="<?= htmlspecialchars($tarefa['status_tarefa']) ?>" required>
-                    <span>Status:</span>
+                    <span id="status">Status</span>
+                    <select name="status_tarefa" required>
+                        <option value="A fazer">A fazer</option>
+                        <option value="Fazendo">Fazendo</option>
+                        <option value="Finalizado">Finalizado</option>
+                    </select>
                 </div>
 
                 <div class="inputbox">
@@ -92,3 +103,30 @@ if (!$tarefa) {
 </body>
 
 </html>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const logoutBtn = document.getElementById('logout');
+        if (logoutBtn) {
+            logoutBtn.addEventListener('click', () => {
+                Swal.fire({
+                    title: "Você deseja sair?",
+                    icon: "warning",
+                    showCancelButton: true,
+                    cancelButtonText: "Cancelar",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "Sim, sair",
+                    confirmButtonColor: "#3085d6",
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        fetch('logout.php', {
+                            method: 'POST'
+                        }).then(() => {
+                            window.location.href = 'login.php';
+                        });
+                    }
+                });
+            });
+        }
+    });
+</script>

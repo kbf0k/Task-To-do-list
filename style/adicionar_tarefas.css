@@ -220,3 +220,77 @@ main .info {
     background-color: #9d00ff;
     color: white;
 }
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        padding: 15px;
+        text-align: center;
+    }
+
+    nav img {
+        width: 100px;
+        margin-bottom: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav ul li a {
+        margin: 10px 0;
+        font-size: 16px;
+    }
+
+    main {
+        height: auto;
+        padding: 40px 0;
+        align-items: center;
+    }
+
+    main .container {
+        width: 95%;
+        padding: 30px;
+    }
+
+    main .container #titulo {
+        font-size: 30px;
+    }
+
+    main .tarefas {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    main .tarefas .a_fazer,
+    main .tarefas .fazendo,
+    main .tarefas .finalizado {
+        margin: 15px 0;
+        width: 90%;
+    }
+
+    #form_cadastro a {
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+    }
+
+    #form_cadastro h1 {
+        font-size: 24px;
+    }
+
+    .inputbox input,
+    .inputbox select {
+        font-size: 0.95rem;
+        padding: 10px;
+    }
+
+    .inputbox span {
+        font-size: 0.95rem;
+    }
+
+    #form_cadastro #entrar_button {
+        width: 100%;
+    }
+}

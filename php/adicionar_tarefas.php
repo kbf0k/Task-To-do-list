@@ -41,6 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <ul>
             <li><a href="inicio.php">Gerenciador de Tarefas</a></li>
             <li><a href="adicionar_tarefas.php">Adicionar Tarefas</a></li>
+            <li><a href="#" id="logout">Sair</a></li>
         </ul>
     </nav>
 
@@ -99,6 +100,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             });
         </script>
     <?php endif; ?>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const logoutBtn = document.getElementById('logout');
+            if (logoutBtn) {
+                logoutBtn.addEventListener('click', () => {
+                    Swal.fire({
+                        title: "Você deseja sair?",
+                        icon: "warning",
+                        showCancelButton: true,
+                        cancelButtonText: "Cancelar",
+                        cancelButtonColor: "#d33",
+                        confirmButtonText: "Sim, sair",
+                        confirmButtonColor: "#3085d6",
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            fetch('logout.php', {
+                                method: 'POST'
+                            }).then(() => {
+                                window.location.href = 'login.php';
+                            });
+                        }
+                    });
+                });
+            }
+        });
+    </script>
 </body>
 
 </html>

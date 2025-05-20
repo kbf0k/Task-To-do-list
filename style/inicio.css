@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins";
+}
+
+nav {
+    background: linear-gradient(90deg, #6b00ad, #4a0078, #65119a);
+    backdrop-filter: blur(20px) brightness(0.7);
+    box-shadow: 0 0 10px black;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+}
+
+nav img {
+    width: 140px;
+}
+
+nav ul li {
+    list-style-type: none;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    margin-right: 50px;
+    margin-left: 50px;
+    position: relative;
+    max-width: max-content;
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 10%;
+    background-color: #9d00ff;
+    transition: 0.2s ease-in-out;
+}
+
+nav ul li a:hover::after {
+    width: 110%;
+}
+
+nav ul li a i {
+    margin-right: 10px;
+}
+
+main {
+    min-height: 100vh;
+    padding: 50px 0;
+    background: radial-gradient(circle, #6b00ad, #7f00ce, #5b0094, #4a0078);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+main .container {
+    width: 90%;
+    padding: 40px;
+    border-radius: 20px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 30px 5px #9d00ff;
+    border: 1px solid #9d00ff;
+    backdrop-filter: blur(30px) brightness(0.8);
+    margin: auto;
+}
+
+main .tarefas {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+main .tarefas .a_fazer {
+    background-color: rgba(0, 0, 0, 0.25);
+    border: 1px solid #9d00ff;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: left;
+    transition: transform 0.3s;
+}
+
+main .tarefas .a_fazer:hover {
+    transform: scale(1.02);
+}
+
+main .info {
+    border: 1px solid #9d00ff;
+    background-color: #4a0078;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+main .botoes {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+main .btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+    text-align: center;
+    color: white;
+}
+
+main .btn.editar {
+    background-color: #6b00ad;
+}
+
+main .btn.editar:hover {
+    background-color: #9d00ff;
+}
+
+main .btn.excluir {
+    background-color: #ad002f;
+}
+
+main .btn.excluir:hover {
+    background-color: #ff0044;
+}

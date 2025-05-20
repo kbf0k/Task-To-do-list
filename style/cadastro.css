@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins";
+}
+
+main {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../img/fundo.png);
+    background-position: center;
+    background-size: cover;
+}
+
+#container {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    padding: 40px;
+    border-radius: 20px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 80px 5px #9d00ff;
+    border: 1px solid #9d00ff;
+    backdrop-filter: blur(40px) brightness(0.70);
+    z-index: 1;
+    overflow: hidden;
+    animation: fade-in 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+}
+
+#form_cadastro {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: left 0.5s ease-in-out;
+    left: 0;
+}
+
+#form_cadastro a {
+    padding: 10px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    border: none;
+    width: 20%;
+    margin: 0;
+    padding: 5px;
+    text-decoration: none;
+    text-align: center;
+    background-color: #9d00ff;
+    color: white;
+}
+
+#form_cadastro a:hover {
+    background-color: #520283;
+    color: white;
+}
+
+#form_cadastro h1 {
+    margin-top: 30px;
+    transition: 0.2s ease-in-out;
+    max-width: max-content;
+    text-align: center;
+}
+
+.inputbox {
+    position: relative;
+    margin-top: 30px;
+}
+
+.inputbox input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #9d00ff;
+    border-radius: 15px;
+    outline: none;
+    color: white;
+    font-size: 1rem;
+    background-color: #520283;
+}
+
+.inputbox span {
+    position: absolute;
+    left: 0;
+    padding: 10px;
+    pointer-events: none;
+    font-size: 1rem;
+    color: white;
+    transition: 0.2s;
+}
+
+.inputbox input:valid~span,
+.inputbox input:focus~span {
+    color: white;
+    transform: translateX(10px) translateY(-10px);
+    background: #520283;
+    font-size: 0.90rem;
+    padding: 0 10px;
+    border-radius: 20px;
+}
+
+.inputbox input:focus~span,
+.inputbox input:not(:placeholder-shown)~span {
+    color: white;
+    transform: translateX(10px) translateY(-10px);
+    background: #520283;
+    font-size: 0.90rem;
+    padding: 0 10px;
+    border-radius: 20px;
+}
+
+
+.inputbox input:valid,
+.inputbox input:focus {
+    border: 1px solid #9d00ff;
+}
+
+#form_cadastro .conta {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+#form_cadastro .conta p {
+    font-size: 13px;
+}
+
+#form_cadastro .conta a {
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+#form_cadastro #criar_conta {
+    text-decoration: none;
+    color: white;
+    max-width: max-content;
+    position: relative;
+    transition: 0.2s ease-in-out;
+}
+
+#form_cadastro #criar_conta::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 10%;
+    background-color: #9d00ff;
+    transition: 0.2s ease-in-out;
+}
+
+#form_cadastro #criar_conta:hover::after {
+    width: 110%;
+}
+
+#form_cadastro #entrar_button {
+    margin-top: 30px;
+    padding: 10px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    border: none;
+}
+
+#form_cadastro #entrar_button:hover {
+    background-color: #9d00ff;
+    color: white;
+}

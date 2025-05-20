@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins";
+}
+
+nav {
+    background: linear-gradient(90deg, #6b00ad, #4a0078, #65119a);
+    backdrop-filter: blur(20px) brightness(0.7);
+    box-shadow: 0 0 10px black;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+}
+
+nav img {
+    width: 140px;
+}
+
+nav ul li {
+    list-style-type: none;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    margin-right: 50px;
+    margin-left: 50px;
+    position: relative;
+    max-width: max-content;
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 10%;
+    background-color: #9d00ff;
+    transition: 0.2s ease-in-out;
+}
+
+nav ul li a:hover::after {
+    width: 110%;
+}
+
+nav ul li a i {
+    margin-right: 10px;
+}
+
+main {
+    height: 110vh;
+    background: radial-gradient(circle, #6b00ad, #7f00ce, #5b0094, #4a0078);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+main .container {
+    width: 90%;
+    padding: 50px;
+    border-radius: 20px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 30px 5px #9d00ff;
+    border: 1px solid #9d00ff;
+    backdrop-filter: blur(40px) brightness(0.70);
+}
+
+main .container #titulo {
+    text-align: center;
+    font-size: 50px;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+}
+
+main .tarefas {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+main .tarefas .a_fazer,
+main .tarefas .fazendo,
+main .tarefas .finalizado {
+    border: 1px solid #9d00ff;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    padding: 30px;
+    margin-left: 30px;
+    margin-right: 30px;
+    height: max-content;
+    text-align: center;
+}
+
+main .info {
+    border: 1px solid #9d00ff;
+    background-color: #4a0078;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+#form_cadastro {
+    display: flex;
+    flex-direction: column;
+    transition: left 0.5s ease-in-out;
+    left: 0;
+}
+
+#form_cadastro a {
+    padding: 10px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    border: none;
+    width: 20%;
+    margin: 0;
+    padding: 5px;
+    text-decoration: none;
+    text-align: center;
+    background-color: #9d00ff;
+    color: white;
+}
+
+#form_cadastro a:hover {
+    background-color: #520283;
+    color: white;
+}
+
+#form_cadastro h1 {
+    margin-top: 30px;
+    transition: 0.2s ease-in-out;
+    max-width: max-content;
+    text-align: center;
+}
+
+.inputbox {
+    position: relative;
+    margin-top: 30px;
+}
+
+.inputbox input,
+.inputbox select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #9d00ff;
+    border-radius: 15px;
+    outline: none;
+    color: white;
+    font-size: 1rem;
+    background-color: #520283;
+}
+
+.inputbox span {
+    position: absolute;
+    left: 0;
+    padding: 10px;
+    pointer-events: none;
+    font-size: 1rem;
+    color: white;
+    transition: 0.2s;
+}
+
+.inputbox input:valid~span,
+.inputbox input:focus~span {
+    color: white;
+    transform: translateX(10px) translateY(-10px);
+    background: #520283;
+    font-size: 0.90rem;
+    padding: 0 10px;
+    border-radius: 20px;
+}
+
+.inputbox input:focus~span,
+.inputbox input:not(:placeholder-shown)~span {
+    color: white;
+    transform: translateX(10px) translateY(-10px);
+    background: #520283;
+    font-size: 0.90rem;
+    padding: 0 10px;
+    border-radius: 20px;
+}
+
+.inputbox #status {
+    color: white;
+    transform: translateX(10px) translateY(-10px);
+    background: #520283;
+    font-size: 0.90rem;
+    padding: 0 10px;
+    border-radius: 20px;
+}
+
+.inputbox input:valid,
+.inputbox input:focus {
+    border: 1px solid #9d00ff;
+}
+
+#form_cadastro #entrar_button {
+    margin-top: 30px;
+    padding: 10px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    border: none;
+}
+
+#form_cadastro #entrar_button:hover {
+    background-color: #9d00ff;
+    color: white;
+}
